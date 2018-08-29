@@ -445,7 +445,6 @@ INSERT INTO exercise_list(
     true,
     true,
     false,
-    false,
     true,
     false,
     true
@@ -515,6 +514,79 @@ INSERT INTO exercise_list(
     true,
     true,
     true,
+    true,
+    true,
+    true,
+    true
+);
+
+INSERT INTO exercise_list(
+    name,
+    biceps,
+    legs,
+    barbell,
+    posterior_chain,
+    back,
+    compound
+)VALUES(
+    "deadrows",
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+);
+
+INSERT INTO exercise_list(
+    name,
+    biceps,
+    posterior_chain,
+    back,
+    cable_machine,
+    dumbells,
+    kettlebell,
+    compound
+)VALUES(
+    "seated rows",
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true
+);
+
+
+INSERT INTO exercise_list(
+    name,
+    biceps,
+    posterior_chain,
+    back,
+    ghd_bench,
+    accessory
+)VALUES(
+    "ghd rows",
+    true,
+    true,
+    true,
+    true,
+    true
+);
+
+INSERT INTO exercise_list(
+    name,
+    posterior_chain,
+    back,
+    shoulders,
+    bench,
+    ghd_bench,
+    accessory
+)VALUES(
+    "isometric YWTs",
+    true,
+    bench,
     true,
     true,
     true,
@@ -664,7 +736,6 @@ INSERT INTO exercise_list(
 INSERT INTO exercise_list(
     name,
     triceps,
-    dumbells,
     posterior_chain,
     shoulders,
     bench,
@@ -675,7 +746,6 @@ INSERT INTO exercise_list(
 )VALUES(
     "bench_dips",
     true,
-    false,
     true,
     true,
     true,
