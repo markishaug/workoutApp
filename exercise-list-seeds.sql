@@ -70,7 +70,7 @@ INSERT INTO exercise_list(
     barbell,
     shoulders,
     compound,
-    resistance_band,
+    resistance_band
 )VALUES(
     "snatch",
     true,
@@ -90,7 +90,7 @@ INSERT INTO exercise_list(
     barbell,
     shoulders,
     compound,
-    resistance_band,
+    resistance_band
 )VALUES(
     "clean",
     true,
@@ -109,7 +109,7 @@ INSERT INTO exercise_list(
     back,
     shoulders,
     compound,
-    resistance_band,
+    resistance_band
 )VALUES(
     "jerk",
     true,
@@ -204,6 +204,7 @@ INSERT INTO exercise_list(
     true,
     true,
     true,
+    true,
     false
 );
 
@@ -216,6 +217,7 @@ INSERT INTO exercise_list(
     accessory
 )VALUES(
     "calf_raises",
+    true,
     true,
     true,
     true,
@@ -376,7 +378,7 @@ INSERT INTO exercise_list(
     chest,
     bench,
     barbell,
-    shoulders
+    shoulders,
     compound
 )VALUES(
     "incline_bench_press",
@@ -469,10 +471,48 @@ INSERT INTO exercise_list(
     barbell,
     posterior_chain,
     back,
-    ghd_bench,
     compound
 )VALUES(
     "bentover_rows",
+    true,
+    true,
+    true,
+    true,
+    true
+);
+
+INSERT INTO exercise_list(
+    name,
+    biceps,
+    barbell,
+    posterior_chain,
+    back,
+    bench,
+    compound
+)VALUES(
+    "onearm_rows",
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+);
+
+INSERT INTO exercise_list(
+    name,
+    biceps,
+    barbell,
+    posterior_chain,
+    back,
+    pullup_bar,
+    gymnastic_rings,
+    playground,
+    compound
+)VALUES(
+    "inverted_rows",
+    true,
+    true,
     true,
     true,
     true,
@@ -490,6 +530,7 @@ INSERT INTO exercise_list(
     dumbells,
     kettlebell,
     resistance_band,
+    playground,
     compound
 )VALUES(
     "overhand_pull_ups",
@@ -500,6 +541,7 @@ INSERT INTO exercise_list(
     false,
     false,
     false,
+    true,
     true
 );
 
@@ -512,6 +554,7 @@ INSERT INTO exercise_list(
     dumbells,
     kettlebell,
     resistance_band,
+    playground,
     compound
 )VALUES(
     "underhand_pull_ups",
@@ -522,6 +565,7 @@ INSERT INTO exercise_list(
     false,
     false,
     false,
+    true,
     true
 );
 
@@ -534,6 +578,7 @@ INSERT INTO exercise_list(
     dumbells,
     kettlebell,
     resistance_band,
+    playground,
     compound
 )VALUES(
     "neutral_pull_ups",
@@ -544,6 +589,7 @@ INSERT INTO exercise_list(
     false,
     false,
     false,
+    true,
     true
 );
 
@@ -556,6 +602,7 @@ INSERT INTO exercise_list(
     dumbells,
     kettlebell,
     resistance_band,
+    playground,
     compound
 )VALUES(
     "switchgrip_pull_ups",
@@ -566,6 +613,7 @@ INSERT INTO exercise_list(
     false,
     false,
     false,
+    true,
     true
 );
 
