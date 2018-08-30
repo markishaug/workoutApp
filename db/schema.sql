@@ -19,7 +19,6 @@ CREATE TABLE user_workout(
     sets INT(5) NOT NULL,
     reps INT(5) NOT NULL,
     weight INT(5) NOT NULL,
-    recommend BOOLEAN,
     PRIMARY KEY(id)
 );
 
