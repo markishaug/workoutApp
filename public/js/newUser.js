@@ -5,7 +5,7 @@ var ageInput = $("#age");
 var weightInput = $("#weight");
 var userName = $("#username");
 var password = $("#password")
-var newUserForm = ("$newUser");
+var newUserForm = ("$#newUser");
 
 // Adding an event listener for when the form is submitted
 $(newUserForm).on("submit", handleFormSubmit);
