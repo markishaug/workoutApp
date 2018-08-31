@@ -65,6 +65,15 @@ CREATE TABLE bodyweight(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE user_profile(
+    id INT(10) AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    age INT(10) NOT NULL,
+    weight INT(10) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY(id)
+)
 
 
 ### core BOOLEAN DEFAULT TRUE,
