@@ -8,43 +8,43 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         legs: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         posterior: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         back: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         biceps: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         triceps: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         shoulders: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         chest: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         core: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: true
         },
         compound: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         },
         accessory: {
-            type: DataTYpes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
         }
 
