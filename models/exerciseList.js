@@ -59,7 +59,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: true
         },
-        ketlebell: {
+        kettlebell: {
             type: DataTypes.BOOLEAN,
             defaultValue: true
         },
