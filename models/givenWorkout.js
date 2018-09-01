@@ -8,21 +8,21 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         sets: {
-            type: DataTypes.INT,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1, 30]
             }
         },
         reps: {
-            type: DataTypes.INT,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1, 30]
             }
         },
         weight: {
-            type: DataTypes.STRING,
+            type: DataTypes.INT,
             allowNull: false,
             validate: {
                 len: [1, 30]
