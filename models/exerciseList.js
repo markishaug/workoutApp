@@ -93,4 +93,5 @@ module.exports = function(sequelize, DataTypes) {
         }
 
     });
+    return ExerciseList;
 };
