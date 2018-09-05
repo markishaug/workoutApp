@@ -12,6 +12,7 @@ $(newUserForm).on("submit", handleFormSubmit);
 // function for when user input is submitted
 function handleFormSubmit(event) {
     event.preventDefault();
+
 // Wont submit the post if we are missing a body, title, or author
 if (!nameInput.val().trim() || !ageInput.val().trim() || !weightInput.val().trim() || !userName.val().trim() || !password.val().trim()) {
     return;
