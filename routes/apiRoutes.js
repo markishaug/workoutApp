@@ -35,4 +35,13 @@ module.exports = function(app) {
             res.json(err);
         });
     });
+    //Post route for adding a new body weight exercise
+    app.post("/api/exercises/wod", function(req, res) {
+        db.BodyWeight.create(req.body).then(function(dblifting) {
+            res.json(dblifting)
+        }).catch(function(err) {
+            console.log(err);
+            res.json(err);
+        });
+    });
 }
