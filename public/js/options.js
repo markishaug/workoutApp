@@ -6,23 +6,30 @@ function handleFormSubmit(event) {
     event.preventDefault();
 // Wont submit the post if we are missing time, purpose, mg, or equipment. Will set a none option for equipment
 
-// if (!workoutOptions.time.val() || !workoutOptions.purpose.val() || !workoutOptions.muscleGroup.val() || !workoutOptions.equipment.val()) {
-//     return;
-//   }
-todayOptions();
+
+
+
+// todayOptions();
 // Create constructor for options table in database
 var workoutOptions = {
     time: $("input[type=checkbox][name=time]:checked").val(),
     purpose: $("input[type=checkbox][name=purpose]:checked").val(),
     muscleGroup: $("input[type=checkbox][name=mg]:checked").val(),
-    equipment: $("#equipment").val()
+    equipment: $("input[type=checkbox][name=equipment]:checked").val()
 };
+
+if (!workoutOptions.time || !workoutOptions.purpose || !workoutOptions.muscleGroup || !workoutOptions.equipment) {
+    return;
+  }
 console.log(workoutOptions);
+console.log(workoutOptions.time);
 // Post choices to wod api
-function todayOptions() {
-    $.post("/api/wod", workoutOptions)
-    .then(timeOption);
-};
+// function todayOptions() {
+//     $.post("/api/wod", workoutOptions)
+//     .then(timeOption);
+// };
+
+timeOption();
 
 // Get values and run functions based on chosen values
 
