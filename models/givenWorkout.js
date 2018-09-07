@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         weight: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 len: [1, 30]

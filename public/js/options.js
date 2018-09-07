@@ -26,16 +26,24 @@ function todayOptions() {
 // Pick workout based on values
 function timeOption() {
 // Time value decides how many exercise are chosen
+var exerciseArr = [];
     $.get("/api/exercises", function(data) {
         for(var i = 0; i < data.length; i++) {
-        
+            var exerciseCount = data[i];
+        if (workoutOptions.time === time1) {
+            // pick 2 
+        }
+        exerciseArr.push(exerciseCount);
         };
     });
 
-
+    purposeOption();
 
 };
 // Purpose decides sets, reps, weight
+function purposeOption() {
+
+}
 
 // Muscle group runs through exercises and picks those that are true based on values chosen
 
