@@ -1,17 +1,20 @@
 $(document).ready(function() {
-$(options).on("click", handleFormSubmit);
+var options = ("#options");
+$(options).on("submit", handleFormSubmit);
+
 function handleFormSubmit(event) {
     event.preventDefault();
 // Wont submit the post if we are missing time, purpose, mg, or equipment. Will set a none option for equipment
+console.log("hello world")
 if (!time.val() || !purpose.val() || !muscleGroup.val() || !equipment.val()) {
     return;
   }
 todayOptions();
 // Create constructor for options table in database
 var workoutOptions = {
-    time: $("#time").val(),
-    purpose: $("#purpose").val(),
-    muscleGroup: $("#mg").val(),
+    time: $("input[name=time]: checked").val(),
+    purpose: $("input[name=purpose]: checked").val(),
+    muscleGroup: $("input[name=mg]: checked").val(),
     equipment: $("#equipment").val()
 };
 
@@ -30,7 +33,7 @@ var exerciseArr = [];
     $.get("/api/exercises", function(data) {
         for(var i = 0; i < data.length; i++) {
             var exerciseCount = data[i];
-        if (workoutOptions.time === time1) {
+        if (workoutOptions.time === "time1") {
             // pick 2 
         }
         exerciseArr.push(exerciseCount);
