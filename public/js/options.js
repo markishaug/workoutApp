@@ -17,7 +17,7 @@ if (!workoutOptions.time || !workoutOptions.purpose || !workoutOptions.muscleGro
     return;
   }
 
-  $.post("/api/process/bestexercise", workoutOptions, function(data) {
+  $.post("/api/exercises", workoutOptions, function(data) {
     console.log(data);
   });
 
