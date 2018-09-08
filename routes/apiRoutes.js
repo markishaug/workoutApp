@@ -6,20 +6,33 @@ const db = require("../models");
 module.exports = function(app) {
     //GET route for getting all of the exercises
     app.get("/api/exercises", function(req, res) {
-        // findAll teh exercises and return them as json
         db.ExerciseList.findAll({}).then(function(dblifting) {
             res.json(dblifting);
         });
     });
     // POST route to run through the exercises and pick through based on user choices
     app.post("/api/process/bestexercise", function(req, res) {
-            console.log("------------------------------", req.body);
-            db.ExerciseList.findAll({}).then(function(dblifting) {
-                var choices = req.body;
-                if (choices.time === "time1") {
-                    //    pick 2
-
+            var muscleGroup;
+            var muscleGroupRequest = req.body.muscleGroup
+            console.log("------------------------------", muscleGroupRequest);
+            console.log(Array.isArray(muscleGroupRequest));
+            if (Array.isArray(muscleGroupRequest)) {
+                muscleGroup = [];
+                for (i = 0; i < muscleGroupRequest.length; i++) {
+                    obj = {};
+                    obj[muscleGroupRequest[i]] = true;
+                    muscleGroup.push(obj);
                 }
+            } else {
+                muscleGroup = {};
+                muscleGroup[muscleGroupRequest] = true;
+            }
+            console.log("----------------------------", muscleGroup);
+            db.ExerciseList.findAll({
+                where: {
+                    $or: muscleGroup
+                }
+            }).then(function(dblifting) {
                 res.json(dblifting);
             });
         })
@@ -31,15 +44,6 @@ module.exports = function(app) {
     });
     //Post route for adding a new exercise
     app.post("/api/exercises", function(req, res) {
-        var exerciseList = {
-            name: "rdl",
-            legs: true,
-            posterior: true,
-            back: true,
-            barbell: true,
-            compound: true
-        };
-        console.log("============", req.body);
         db.ExerciseList.create(exerciseList).then(function(dblifting) {
             res.json(dblifting)
         }).catch(function(err) {
