@@ -1,7 +1,7 @@
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     compound
@@ -14,10 +14,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     compound
@@ -30,10 +30,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     compound
@@ -46,10 +46,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     compound
@@ -62,10 +62,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     shoulders,
@@ -82,10 +82,10 @@ INSERT INTO exercise_list(
     false
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     shoulders,
@@ -102,7 +102,7 @@ INSERT INTO exercise_list(
     false
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     barbell,
@@ -120,7 +120,7 @@ INSERT INTO exercise_list(
     false
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     barbell,
@@ -134,7 +134,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     back,
@@ -146,7 +146,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     barbell,
@@ -158,7 +158,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     barbell,
@@ -170,7 +170,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     compound
@@ -180,7 +180,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
     barbell,
@@ -192,10 +192,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     bench,
     barbell,
     resistance_band
@@ -208,10 +208,10 @@ INSERT INTO exercise_list(
     false
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     legs,
-    posterior_chain,
+    posterior,
     barbell,
     cable_machine,
     accessory
@@ -224,7 +224,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
     shoulders,
@@ -238,7 +238,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     shoulders,
     cable_machine,
@@ -250,7 +250,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     shoulders,
     cable_machine,
@@ -262,10 +262,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     shoulders,
-    posterior_chain,
+    posterior,
     back,
     ghd_bench,
     accessory
@@ -278,11 +278,11 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     shoulders,
     barbell,
-    posterior_chain,
+    posterior,
     back,
     accessory
 )VALUES(
@@ -294,10 +294,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     shoulders,
-    posterior_chain,
+    posterior,
     back,
     barbell,
     kettlebell,
@@ -318,11 +318,11 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     barbell,
     legs,
-    posterior_chain,
+    posterior,
     back,
     ghd_bench,
     accessory
@@ -336,9 +336,9 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
-    posterior_chain,
+    posterior,
     back,
     triceps,
     cable_machine,
@@ -356,7 +356,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
     chest,
@@ -372,7 +372,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
     chest,
@@ -390,7 +390,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
     chest,
@@ -406,7 +406,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     chest,
     bench,
@@ -418,7 +418,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     chest,
     cable_machine,
@@ -430,7 +430,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     chest,
     triceps,
@@ -450,7 +450,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
     cable_machine,
@@ -464,11 +464,11 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
     barbell,
-    posterior_chain,
+    posterior,
     back,
     compound
 )VALUES(
@@ -480,11 +480,11 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
     barbell,
-    posterior_chain,
+    posterior,
     back,
     bench,
     compound
@@ -498,11 +498,11 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
     barbell,
-    posterior_chain,
+    posterior,
     back,
     pullup_bar,
     gymnastic_rings,
@@ -520,12 +520,12 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
     legs,
     barbell,
-    posterior_chain,
+    posterior,
     back,
     compound
 )VALUES(
@@ -538,10 +538,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
-    posterior_chain,
+    posterior,
     back,
     cable_machine,
     dumbells,
@@ -559,10 +559,10 @@ INSERT INTO exercise_list(
 );
 
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     biceps,
-    posterior_chain,
+    posterior,
     back,
     ghd_bench,
     accessory
@@ -575,9 +575,9 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
-    posterior_chain,
+    posterior,
     back,
     shoulders,
     bench,
@@ -593,10 +593,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     pullup_bar,
-    posterior_chain,
+    posterior,
     biceps,
     gymnastic_rings,
     dumbells,
@@ -617,10 +617,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     pullup_bar,
-    posterior_chain,
+    posterior,
     biceps,
     gymnastic_rings,
     dumbells,
@@ -641,10 +641,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     pullup_bar,
-    posterior_chain,
+    posterior,
     biceps,
     gymnastic_rings,
     dumbells,
@@ -665,10 +665,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     pullup_bar,
-    posterior_chain,
+    posterior,
     biceps,
     gymnastic_rings,
     dumbells,
@@ -689,7 +689,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     gymnastic_rings,
     triceps,
@@ -707,7 +707,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
     barbell,
@@ -719,7 +719,7 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
     dumbells,
@@ -733,10 +733,10 @@ INSERT INTO exercise_list(
     true
 );
 
-INSERT INTO exercise_list(
+INSERT INTO ExerciseLists(
     name,
     triceps,
-    posterior_chain,
+    posterior,
     shoulders,
     bench,
     playground,
