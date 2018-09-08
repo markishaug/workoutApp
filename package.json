@@ -1,5 +1,5 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "handlebars-boilerplate",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -13,6 +13,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
+    "env": "0.0.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
@@ -26,5 +27,14 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smitty10010/workoutApp.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/smitty10010/workoutApp/issues"
+  },
+  "homepage": "https://github.com/smitty10010/workoutApp#readme"
 }
