@@ -13,17 +13,17 @@ module.exports = function(app) {
     });
     // POST route to run through the exercises and pick through based on user choices
     app.post("/api/process/bestexercise", function(req, res) {
-        console.log("------------------------------",req.body);
-        db.ExerciseList.findAll({}).then(function(dblifting) {
-            var choices = req.body;
-           if (choices.time === "time1") {
-            //    pick 2
+            console.log("------------------------------", req.body);
+            db.ExerciseList.findAll({}).then(function(dblifting) {
+                var choices = req.body;
+                if (choices.time === "time1") {
+                    //    pick 2
 
-           }
-            res.json(dblifting);
-        });
-    })
-    //Get route for getting all of bodyweight exercises
+                }
+                res.json(dblifting);
+            });
+        })
+        //Get route for getting all of bodyweight exercises
     app.get("/api/exercises/bodyweight", function(req, res) {
         db.BodyWeight.findAll({}).then(function(dblifting) {
             res.json(dblifting);
@@ -50,6 +50,15 @@ module.exports = function(app) {
     //Post route for adding a new body weight exercise
     app.post("/api/exercises/bodyweight", function(req, res) {
         db.BodyWeight.create(req.body).then(function(dblifting) {
+            res.json(dblifting)
+        }).catch(function(err) {
+            console.log(err);
+            res.json(err);
+        });
+    });
+    //Post route for adding bulk new body weight exercises
+    app.post("/api/bulk/exercises/bodyweight", function(req, res) {
+        db.BodyWeight.bulkCreate(req.body).then(function(dblifting) {
             res.json(dblifting)
         }).catch(function(err) {
             console.log(err);
