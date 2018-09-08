@@ -1,0 +1,22 @@
+.fixed-bottom {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   background-color: rgb(253, 193, 40);
+   color: white;
+   text-align: center;
+   height:35px;
+}
+
+.container-fluid {
+   height: auto;
+}
+
+.page-content {
+   width: 97%;
+   margin: 0 auto;
+   margin-top: 40px;
+   font-size: 20px;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: 100;
+}
