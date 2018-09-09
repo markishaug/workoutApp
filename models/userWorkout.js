@@ -15,14 +15,14 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         reps: {
-            type: DataTypes.ENUM,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 len: [1, 30]
             }
         },
         weight: {
-            type: DataTypes.ENUM,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 len: [1, 30]
@@ -33,10 +33,10 @@ module.exports = function(sequelize, DataTypes) {
         // We're saying that a UserWorkout should belong to a WorkoutHistory
         // A UserWorkout can't be created without an WorkoutHistory due to the foreign key constraint
         UserWorkout.belongsTo(models.WorkoutHistory, {
-          foreignKey: {
-            allowNull: false
-          }
+            foreignKey: {
+                allowNull: false
+            }
         });
-      };
+    };
     return UserWorkout;
 };
