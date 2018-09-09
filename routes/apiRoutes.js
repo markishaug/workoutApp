@@ -113,4 +113,13 @@ module.exports = function(app) {
             res.json(err);
         });
     });
+    //Post route for adding a new user
+    app.post("/api/userProfile", function(req, res) {
+        db.UserProfile.create(req.body).then(function(dblifting) {
+            res.json(dblifting)
+        }).catch(function(err) {
+            console.log(err);
+            res.json(err);
+        });
+    });
 }
