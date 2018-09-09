@@ -15,14 +15,14 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         reps: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.ENUM,
             allowNull: false,
             validate: {
                 len: [1, 30]
             }
         },
         weight: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.ENUM,
             allowNull: false,
             validate: {
                 len: [1, 30]
