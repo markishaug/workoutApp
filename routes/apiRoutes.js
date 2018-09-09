@@ -36,15 +36,41 @@ module.exports = function(app) {
                 res.json(dblifting);
             });
         })
+    // POST route to run through the exercises and pick through based on user choices
+    app.post("/api/process/bestBodyweightExercise", function(req, res) {
+        var muscleGroup;
+        var muscleGroupRequest = req.body.muscleGroup
+        console.log("------------------------------", muscleGroupRequest);
+        console.log(Array.isArray(muscleGroupRequest));
+        if (Array.isArray(muscleGroupRequest)) {
+            muscleGroup = [];
+            for (i = 0; i < muscleGroupRequest.length; i++) {
+                obj = {};
+                obj[muscleGroupRequest[i]] = true;
+                muscleGroup.push(obj);
+            }
+        } else {
+            muscleGroup = {};
+            muscleGroup[muscleGroupRequest] = true;
+        }
+        console.log("----------------------------", muscleGroup);
+        db.ExerciseList.findAll({
+            where: {
+                $or: muscleGroup
+            }
+        }).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    })
         //Get route for getting all of bodyweight exercises
     app.get("/api/exercises/bodyweight", function(req, res) {
         db.BodyWeight.findAll({}).then(function(dblifting) {
             res.json(dblifting);
         });
     });
-    //Post route for adding a new exercise
+    // Post route for adding a new exercise
     app.post("/api/exercises", function(req, res) {
-        db.ExerciseList.create(exerciseList).then(function(dblifting) {
+        db.ExerciseList.create(req.body).then(function(dblifting) {
             res.json(dblifting)
         }).catch(function(err) {
             console.log(err);
