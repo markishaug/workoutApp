@@ -4,7 +4,7 @@ $(options).on("submit", handleFormSubmit);
 
 function handleFormSubmit(event) {
     event.preventDefault();
-
+var val = [];
 // Create constructor for options table in database
 var workoutOptions = {
     time: $("input[type=checkbox][name=time]:checked").val(),
@@ -12,14 +12,17 @@ var workoutOptions = {
     muscleGroup: $("input[type=checkbox][name=mg]:checked").val(),
     equipment: $("input[type=checkbox][name=equipment]:checked").val()
 };
+console.log(workoutOptions);
+console.log(workoutOptions.muscleGroup);
+console.log(workoutOptions.equipment);
 // Wont submit the post if we are missing time, purpose, mg, or equipment. Will set a none option for equipment
 if (!workoutOptions.time || !workoutOptions.purpose || !workoutOptions.muscleGroup || !workoutOptions.equipment) {
     return;
   }
 
-  $.post("/api/exercises", workoutOptions, function(data) {
-    console.log(data);
-  });
+//   $.post("/api/exercises", workoutOptions, function(data) {
+//     console.log(data);
+//   });
 
 
 };

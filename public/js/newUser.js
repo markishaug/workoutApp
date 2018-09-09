@@ -38,7 +38,7 @@ var newUser = {
 submitInfo(newUser);
 // Sends data and brings user to test page
 function submitInfo(info) {
-    $.post("/api/test", info, function() {
+    $.post("/api/userProfile", info, function() {
         window.location.href = "/test";
       });
     }
