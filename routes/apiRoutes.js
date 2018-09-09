@@ -36,32 +36,32 @@ module.exports = function(app) {
                 res.json(dblifting);
             });
         })
-    // POST route to run through the exercises and pick through based on user choices
+        // POST route to run through the exercises and pick through based on user choices
     app.post("/api/process/bestbodyweightexercise", function(req, res) {
-        var muscleGroup;
-        var muscleGroupRequest = req.body.muscleGroup
-        console.log("------------------------------", muscleGroupRequest);
-        console.log(Array.isArray(muscleGroupRequest));
-        if (Array.isArray(muscleGroupRequest)) {
-            muscleGroup = [];
-            for (i = 0; i < muscleGroupRequest.length; i++) {
-                obj = {};
-                obj[muscleGroupRequest[i]] = true;
-                muscleGroup.push(obj);
+            var muscleGroup;
+            var muscleGroupRequest = req.body.muscleGroup
+            console.log("------------------------------", muscleGroupRequest);
+            console.log(Array.isArray(muscleGroupRequest));
+            if (Array.isArray(muscleGroupRequest)) {
+                muscleGroup = [];
+                for (i = 0; i < muscleGroupRequest.length; i++) {
+                    obj = {};
+                    obj[muscleGroupRequest[i]] = true;
+                    muscleGroup.push(obj);
+                }
+            } else {
+                muscleGroup = {};
+                muscleGroup[muscleGroupRequest] = true;
             }
-        } else {
-            muscleGroup = {};
-            muscleGroup[muscleGroupRequest] = true;
-        }
-        console.log("----------------------------", muscleGroup);
-        db.ExerciseList.findAll({
-            where: {
-                $or: muscleGroup
-            }
-        }).then(function(dblifting) {
-            res.json(dblifting);
-        });
-    })
+            console.log("----------------------------", muscleGroup);
+            db.BodyWeight.findAll({
+                where: {
+                    $or: muscleGroup
+                }
+            }).then(function(dblifting) {
+                res.json(dblifting);
+            });
+        })
         //Get route for getting all of bodyweight exercises
     app.get("/api/exercises/bodyweight", function(req, res) {
         db.BodyWeight.findAll({}).then(function(dblifting) {
