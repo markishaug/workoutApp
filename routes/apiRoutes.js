@@ -86,7 +86,49 @@ module.exports = function(app) {
                 } else if (time === 4) {
                     //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
-                    for (i = 1; i <= 1; i++) {
+                    for (i = 1; i <= 2; i++) {
+                        var compound;
+
+                        function findCompound(exercise) {
+                            if (exercise.compound === true) {
+                                return true;
+                            };
+                        };
+                        compound = dblifting.filter(findCompound);
+
+                        function getRandomCompoundIndex() {
+                            min = 0;
+                            max = compound.length;
+                            return Math.floor(Math.random() * (max - min + 1)) + min;
+                        };
+
+                        workoutArray.push(compound[getRandomCompoundIndex()]);
+
+                    }
+                    //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
+                    for (i = 1; i <= 2; i++) {
+                        var accessory;
+
+                        function findAccessory(exercise) {
+                            if (exercise.accessory === true) {
+                                return true;
+                            };
+                        };
+
+                        accessory = dblifting.filter(findAccessory);
+
+                        function getRandomAccessoryIndex() {
+                            min = 0;
+                            max = accessory.length;
+                            return Math.floor(Math.random() * (max - min + 1)) + min;
+                        };
+
+                        workoutArray.push(accessory[getRandomAccessoryIndex()]);
+                    }
+                } else if (time === 6) {
+                    //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
+
+                    for (i = 1; i <= 3; i++) {
                         var compound;
 
                         function findCompound(exercise) {
@@ -125,52 +167,10 @@ module.exports = function(app) {
 
                         workoutArray.push(accessory[getRandomAccessoryIndex()]);
                     }
-                } else if (time === 6) {
-                    //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
-
-                    for (i = 1; i <= 1; i++) {
-                        var compound;
-
-                        function findCompound(exercise) {
-                            if (exercise.compound === true) {
-                                return true;
-                            };
-                        };
-                        compound = dblifting.filter(findCompound);
-
-                        function getRandomCompoundIndex() {
-                            min = 0;
-                            max = compound.length;
-                            return Math.floor(Math.random() * (max - min + 1)) + min;
-                        };
-
-                        workoutArray.push(compound[getRandomCompoundIndex()]);
-
-                    }
-                    //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
-                    for (i = 1; i <= 5; i++) {
-                        var accessory;
-
-                        function findAccessory(exercise) {
-                            if (exercise.accessory === true) {
-                                return true;
-                            };
-                        };
-
-                        accessory = dblifting.filter(findAccessory);
-
-                        function getRandomAccessoryIndex() {
-                            min = 0;
-                            max = accessory.length;
-                            return Math.floor(Math.random() * (max - min + 1)) + min;
-                        };
-
-                        workoutArray.push(accessory[getRandomAccessoryIndex()]);
-                    }
                 } else if (time === 8) {
                     //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
-                    for (i = 1; i <= 1; i++) {
+                    for (i = 1; i <= 4; i++) {
                         var compound;
 
                         function findCompound(exercise) {
@@ -190,7 +190,7 @@ module.exports = function(app) {
 
                     }
                     //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
-                    for (i = 1; i <= 7; i++) {
+                    for (i = 1; i <= 4; i++) {
                         var accessory;
 
                         function findAccessory(exercise) {
@@ -284,7 +284,49 @@ module.exports = function(app) {
             } else if (time === 4) {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
-                for (i = 1; i <= 1; i++) {
+                for (i = 1; i <= 2; i++) {
+                    var compound;
+
+                    function findCompound(exercise) {
+                        if (exercise.compound === true) {
+                            return true;
+                        };
+                    };
+                    compound = dblifting.filter(findCompound);
+
+                    function getRandomCompoundIndex() {
+                        min = 0;
+                        max = compound.length;
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    };
+
+                    workoutArray.push(compound[getRandomCompoundIndex()]);
+
+                }
+                //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
+                for (i = 1; i <= 2; i++) {
+                    var accessory;
+
+                    function findAccessory(exercise) {
+                        if (exercise.accessory === true) {
+                            return true;
+                        };
+                    };
+
+                    accessory = dblifting.filter(findAccessory);
+
+                    function getRandomAccessoryIndex() {
+                        min = 0;
+                        max = accessory.length;
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    };
+
+                    workoutArray.push(accessory[getRandomAccessoryIndex()]);
+                }
+            } else if (time === 6) {
+                //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
+
+                for (i = 1; i <= 3; i++) {
                     var compound;
 
                     function findCompound(exercise) {
@@ -323,52 +365,10 @@ module.exports = function(app) {
 
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
-            } else if (time === 6) {
-                //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
-
-                for (i = 1; i <= 1; i++) {
-                    var compound;
-
-                    function findCompound(exercise) {
-                        if (exercise.compound === true) {
-                            return true;
-                        };
-                    };
-                    compound = dblifting.filter(findCompound);
-
-                    function getRandomCompoundIndex() {
-                        min = 0;
-                        max = compound.length;
-                        return Math.floor(Math.random() * (max - min + 1)) + min;
-                    };
-
-                    workoutArray.push(compound[getRandomCompoundIndex()]);
-
-                }
-                //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
-                for (i = 1; i <= 5; i++) {
-                    var accessory;
-
-                    function findAccessory(exercise) {
-                        if (exercise.accessory === true) {
-                            return true;
-                        };
-                    };
-
-                    accessory = dblifting.filter(findAccessory);
-
-                    function getRandomAccessoryIndex() {
-                        min = 0;
-                        max = accessory.length;
-                        return Math.floor(Math.random() * (max - min + 1)) + min;
-                    };
-
-                    workoutArray.push(accessory[getRandomAccessoryIndex()]);
-                }
             } else if (time === 8) {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
-                for (i = 1; i <= 1; i++) {
+                for (i = 1; i <= 4; i++) {
                     var compound;
 
                     function findCompound(exercise) {
@@ -388,7 +388,7 @@ module.exports = function(app) {
 
                 }
                 //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
-                for (i = 1; i <= 7; i++) {
+                for (i = 1; i <= 4; i++) {
                     var accessory;
 
                     function findAccessory(exercise) {
