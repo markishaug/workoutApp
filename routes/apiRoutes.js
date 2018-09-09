@@ -37,7 +37,7 @@ module.exports = function(app) {
             });
         })
     // POST route to run through the exercises and pick through based on user choices
-    app.post("/api/process/bestBodyweightExercise", function(req, res) {
+    app.post("/api/process/bestbodyweightexercise", function(req, res) {
         var muscleGroup;
         var muscleGroupRequest = req.body.muscleGroup
         console.log("------------------------------", muscleGroupRequest);
