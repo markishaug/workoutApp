@@ -5,7 +5,9 @@ module.exports = function(sequelize, DataTypes) {
 
     WorkoutHistory.associate = function(models) {
         // Associating WorkoutHistory with UserWorkouts
-        WorkoutHistory.hasMany(models.UserWorkout);
+        WorkoutHistory.hasMany(models.UserWorkout, {
+            onDelete: "cascade"
+          });
     };
     return WorkoutHistory;
 };

@@ -34,9 +34,9 @@ module.exports = function(sequelize, DataTypes) {
         // A UserWorkout can't be created without an WorkoutHistory due to the foreign key constraint
         UserWorkout.belongsTo(models.WorkoutHistory, {
             foreignKey: {
-                allowNull: false
+              allowNull: false
             }
-        });
+          });
     };
     return UserWorkout;
 };
