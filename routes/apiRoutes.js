@@ -480,9 +480,21 @@ module.exports = function(app) {
             res.json(dblifting);
         });
     });
-    // PUT route for updating workout history
+    // POST route for adding workout history
     app.post("/api/workoutHistory", function(req, res) {
         db.WorkoutHistory.create({exercise: req.body}).then(function(dblifting) {
+        res.json(dblifting);
+        });
+    });
+    //Get route for getting self assessment
+    app.get("/api/selfassess", function(req, res) {
+        db.WorkoutHistory.findAll({}).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    });
+    // POST route for adding self assesment
+    app.post("/api/selfassess", function(req, res) {
+        db.WorkoutHistory.create(req.body).then(function(dblifting) {
         res.json(dblifting);
         });
     });

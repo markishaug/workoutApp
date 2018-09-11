@@ -26,7 +26,7 @@ function updateWorkout(workout) {
   })
     .then(function(data) {
       console.log(data);
-      // window.location.href = "/userprofile";
+      window.location.href = "/userprofile";
     });
 }
 
