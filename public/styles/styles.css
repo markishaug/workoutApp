@@ -2,10 +2,14 @@
    position: fixed;
    left: 0;
    bottom: 0;
-   background-color: rgb(253, 193, 40);
-   color: white;
+   background-color: #ffc107;
+   width:98%;
+   margin: 0 auto;
+   color: black;
    text-align: center;
    height:35px;
+   padding-top:5px;
+   border-radius: 5px;
 }
 
 .container-fluid {
@@ -15,8 +19,30 @@
 .page-content {
    width: 97%;
    margin: 0 auto;
-   margin-top: 40px;
+   margin-top: 20px;
+   margin-bottom: 80px;
    font-size: 20px;
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-weight: 100;
+   font-family: font-family: 'Oswald', sans-serif;
+   font-weight: 300;
+}
+
+.homeh3 {
+    font-weight: 100;
+    text-align: center;
+}
+
+.homeh1  {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom:25px;
+}
+
+#homelogo {
+    display:block;
+    width:25%;
+    margin: 0 auto 20px auto;
+}
+
+#home-signup {
+    margin-top:45px;
 }
