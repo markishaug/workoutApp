@@ -29,14 +29,10 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-    UserWorkout.associate = function(models) {
-        // We're saying that a UserWorkout should belong to a WorkoutHistory
-        // A UserWorkout can't be created without an WorkoutHistory due to the foreign key constraint
-        UserWorkout.belongsTo(models.WorkoutHistory, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-    };
+    // UserWorkout.associate = function(models) {
+    //     // We're saying that a UserWorkout should belong to a WorkoutHistory
+    //     // A UserWorkout can't be created without an WorkoutHistory due to the foreign key constraint
+    //     UserWorkout.belongsTo(models.WorkoutHistory);
+    // };
     return UserWorkout;
 };

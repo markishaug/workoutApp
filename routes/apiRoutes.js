@@ -122,35 +122,18 @@ module.exports = function(app) {
             res.json(err);
         });
     });
-    //Post route for adding a user workout
-    app.post("/api/userWorkouts", function(req, res) {
-        db.UserWorkout.create(req.body).then(function(dblifting) {
-            res.json(dblifting)
-        }).catch(function(err) {
-            console.log(err);
-            res.json(err);
-        });
-    });
-    //Get route for getting all user workouts
-    app.get("/api/userWorkouts", function(req, res) {
-        db.UserWorkout.findAll({}).then(function(dblifting) {
-            res.json(dblifting);
-        });
-    });
-    //Post route for adding to workout history
-    app.post("/api/workoutHistory", function(req, res) {
-        db.WorkoutHistory.create(req.body).then(function(dblifting) {
-            res.json(dblifting)
-        }).catch(function(err) {
-            console.log(err);
-            res.json(err);
-        });
-    });
-    //Get route for getting all user workouts
+    //Get route for getting workout history
     app.get("/api/workoutHistory", function(req, res) {
         db.WorkoutHistory.findAll({}).then(function(dblifting) {
             res.json(dblifting);
         });
     });
+    // PUT route for updating workout history
+    app.post("/api/workoutHistory", function(req, res) {
+        db.WorkoutHistory.create({exercise: req.body}).then(function(dblifting) {
+        res.json(dblifting);
+        });
+    });
+
 
 }

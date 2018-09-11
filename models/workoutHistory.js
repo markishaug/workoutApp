@@ -1,13 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     var WorkoutHistory = sequelize.define("WorkoutHistory", {
-        date: DataTypes.DATE
+        date: DataTypes.DATE,
+        exercise: {
+            type: DataTypes.JSON,
+            allowNull: false
+        }
     });
-
-    WorkoutHistory.associate = function(models) {
-        // Associating WorkoutHistory with UserWorkouts
-        WorkoutHistory.hasMany(models.UserWorkout, {
-            onDelete: "cascade"
-          });
-    };
     return WorkoutHistory;
 };

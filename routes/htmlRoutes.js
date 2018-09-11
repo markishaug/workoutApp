@@ -16,4 +16,8 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/sandbox.html"));
   });
+
+  app.get("/wod", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/wodsandbox.html"));
+  });
 };
