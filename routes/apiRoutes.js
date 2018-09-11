@@ -474,4 +474,16 @@ module.exports = function(app) {
             res.json(err);
         });
     });
-}
+    //Get route for getting workout history
+    app.get("/api/workoutHistory", function(req, res) {
+        db.WorkoutHistory.findAll({}).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    });
+    // PUT route for updating workout history
+    app.post("/api/workoutHistory", function(req, res) {
+        db.WorkoutHistory.create({exercise: req.body}).then(function(dblifting) {
+        res.json(dblifting);
+        });
+    });
+};
