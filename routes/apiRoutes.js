@@ -552,14 +552,14 @@ module.exports = function(app) {
             pullupMultiplier();
             squatMultiplier();
 
-            
-            
+            var oneRepObj = {
+                Bench: pushupMax,
+                Pullup: pullupMax,
+                Squat: squatMax
+            };
+            console.log("------------", oneRepObj);
 
-            var oneRepArr = [];
-            oneRepArr.push(pushupMax, pullupMax, squatMax);
-            console.log("------------", oneRepArr);
-
-        res.json(oneRepArr);
+        res.json(oneRepObj);
         });
     });
 };
