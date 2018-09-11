@@ -488,13 +488,30 @@ module.exports = function(app) {
     });
     //Get route for getting self assessment
     app.get("/api/selfassess", function(req, res) {
-        db.WorkoutHistory.findAll({}).then(function(dblifting) {
+        db.SelfAssess.findAll({}).then(function(dblifting) {
             res.json(dblifting);
         });
     });
     // POST route for adding self assesment
     app.post("/api/selfassess", function(req, res) {
-        db.WorkoutHistory.create(req.body).then(function(dblifting) {
+        db.SelfAssess.create(req.body).then(function(dblifting) {
+        res.json(dblifting);
+        });
+    });
+    // POST route for estimating one rep max
+    app.post("/api/estimateOneRep", function(req, res) {
+        console.log("===========", req.body)
+        db.SelfAssess.create(req.body).then(function(dblifting) {
+            // Multiply body weight by incremental number depending on the number of repetions
+            var maxReps = {
+                pushups: req.body.pushups,
+                pullups: req.body.pullups,
+                squats: req.body.squats
+            };
+            var bodyweight = req.body.weight;
+            var pushupBodyweight = req.body.weight
+            
+
         res.json(dblifting);
         });
     });
