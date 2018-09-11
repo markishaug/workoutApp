@@ -500,19 +500,66 @@ module.exports = function(app) {
     });
     // POST route for estimating one rep max
     app.post("/api/estimateOneRep", function(req, res) {
-        console.log("===========", req.body)
+        
         db.SelfAssess.create(req.body).then(function(dblifting) {
             // Multiply body weight by incremental number depending on the number of repetions
+            console.log("===========", req.body)
             var maxReps = {
                 pushups: req.body.pushups,
                 pullups: req.body.pullups,
                 squats: req.body.squats
             };
             var bodyweight = req.body.weight;
-            var pushupBodyweight = req.body.weight
+            var pushupBodyweight = req.body.weight * 0.64;
+            var multiplier;
+            var pushupMax;
+            var pullupMax;
+            var squatMax;
+            function pushupMultiplier() {
+                if (maxReps.pushups === 1) {
+                    multiplier = 1;
+                } else if 
+                    (maxReps.pushups === 0) {
+                    multiplier = 0.75;
+                } else {
+                    multiplier = ((maxReps.pushups - 1) * 0.04) + 1
+                };
+                pushupMax = pushupBodyweight * multiplier;
+            };
+            function pullupMultiplier() {
+                if (maxReps.pullups === 1) {
+                    multiplier = 1;
+                } else if 
+                    (maxReps.pullups === 0) {
+                    multiplier = 0.75;
+                } else {
+                    multiplier = ((maxReps.pullups - 1) * 0.04) + 1
+                };
+                pullupMax = bodyweight * multiplier;
+            };
+            function squatMultiplier() {
+                if (maxReps.squats === 1) {
+                    multiplier = 1;
+                } else if 
+                    (maxReps.squats === 0) {
+                    multiplier = 0.75;
+                } else {
+                    multiplier = ((maxReps.squats - 1) * 0.02) + 1
+                };
+                squatMax = bodyweight * multiplier;
+            };
+            pushupMultiplier();
+            pullupMultiplier();
+            squatMultiplier();
+
+            
             
 
-        res.json(dblifting);
+            var oneRepArr = [];
+            oneRepArr.push(pushupMax, pullupMax, squatMax);
+            console.log("------------", oneRepArr);
+
+        res.json(oneRepArr);
         });
     });
 };
