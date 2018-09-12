@@ -17,8 +17,29 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/sandbox.html"));
   });
 
-  app.get("/login", function(req, res) {
+  // returning user login
+  app.get("/rtn-login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/return-user-login.html"));
+  });
+
+  // update the assessment test
+  app.get("/take-test", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/update-test.html"));
+  });
+
+  // workout now page
+  app.get("/rtn-user-gotoWOD", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/workoutnow.html"));
+  });
+
+  // user profile page
+   app.get("/gotoProfile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/user-profile.html"));
+  });
+
+  // goto splash page
+  app.get("/launch", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/wod", function(req, res) {
@@ -26,3 +47,5 @@ module.exports = function(app) {
   });
 
 };
+
+

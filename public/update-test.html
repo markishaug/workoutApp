@@ -26,7 +26,7 @@
 
         <!-- start nav ---------------------->
         <nav class="sticky-top nav-fill navbar navbar-expand-lg navbar-light bg-warning rounded mb-0">
-            <a class="navbar-brand text-black" href="index.html">The WorkOut App</a>
+            <a class="navbar-brand text-black" id="gotoProfile">The WorkOut App</a>
         </nav>
 
         </nav><!-- end nav ---------------------->
@@ -44,7 +44,7 @@
                         <h6>Choose novice OR intermediate/advanced.</h6>
                         <br>
                         <h4 id="novice">New or novice users:</h4>
-                        <h6>Enter your 1 set maximum amount performed for pushups, pullups and body weight squats in one session. Allow no more than 3 minutes rest between exercise.</h6>
+                        <h6>Enter your 1 set maximum amount (quantity) performed for pushups, pullups and body weight squats in one session. Allow no more than 3 minutes rest between exercise.</h6>
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="pushups">Pushups</label>
@@ -58,18 +58,26 @@
                                 <label for="body-weight-squats">Squats</label>
                                 <input type="body-weight-squats" class="form-control" id="body-weight-squats" placeholder="squats">
                             </div>
-                        </div><!-- keep -->
+                            <div class="form-group col-4">
+                                <label for="age">Age</label>
+                                <input type="age" class="form-control" id="novice-age" placeholder="age">
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="weight">Weight</label>
+                                <input type="weight" class="form-control" id="novice-weight" placeholder="weight">
+                            </div>
+                        </div><!-- end novice section  -->
 
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <a href="user-profile.html" class="btn btn-outline-success" id="update-novice-btn" role="button">Submit</a>
+                                <button type="button" class="btn btn-outline-success" id="update-novice-btn">Submit</button>
                             </div>
                         </div>
 
                         <br>
 
                         <h4 id="advanced">Intermediate or advanced users:</h4>
-                        <h6>Find your maximum for three exerices. Enter your known 1 rep max (in pounds) for bench press, pullup and squats.</h6>
+                        <h6>Enter your known 1 rep max (in pounds) for bench press, pullup and squats.</h6>
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="bench">Bench Press</label>
@@ -83,16 +91,21 @@
                                 <label for="squats">Squats</label>
                                 <input type="squats" class="form-control" id="squats" placeholder="squats">
                             </div>
-                        </div><!-- keep -->
+                            <div class="form-group col-4">
+                                <label for="age">Age</label>
+                                <input type="age" class="form-control" id="adv-age" placeholder="age">
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="weight">Weight</label>
+                                <input type="weight" class="form-control" id="adv-weight" placeholder="weight">
+                            </div>
+                        </div><!-- end adv section -->
 
                         <div class="form-row">
                             <div class="form-group col-12">
-
-                                <a href="user-profile.html" class="btn btn-outline-success" id="update-advanced-btn" role="button">Submit</a>
+                                <button type="button" class="btn btn-outline-success" id="update-advanced-btn">Submit</button>
                             </div>
                         </div>
-
-
 
                     </form>
                 </div>
