@@ -21,13 +21,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/return-user-login.html"));
   });
 
-
-
-
-  <a href="update-test.html" class="btn btn-outline-success" id="home-take-test-btn" role="button">Sign
-  up!</a>
-
-
-
+  app.get("/wod", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/wodsandbox.html"));
+  });
 
 };

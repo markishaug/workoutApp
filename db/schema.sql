@@ -75,6 +75,14 @@ CREATE TABLE user_profile(
     PRIMARY KEY(id)
 )
 
+CREATE TABLE self_assess(
+    id INT(10) AUTO_INCREMENT,
+    pushups INT(10) NOT NULL,
+    pullups INT(10) NOT NULL,
+    squats INT(10) NOT NULL,
+    PRIMARY KEY(id)
+)
+
 
 ### core BOOLEAN DEFAULT TRUE,
 dumbells BOOLEAN DEFAULT TRUE,
