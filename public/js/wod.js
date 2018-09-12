@@ -1,3 +1,5 @@
+// Takes user input about their workout and sends it to their workout history
+
 $(document).ready(function() {
 var nameInput = $("#name");
 var setsInput = $("#sets");
@@ -7,7 +9,7 @@ var complete = $("#complete");
 $(complete).on("submit", handleWorkoutSubmit);
 function handleWorkoutSubmit(event) {
   event.preventDefault();
-
+// Constructor for each exercise
 var newExercise = {
   name: nameInput.val().trim(),
   sets: setsInput.val().trim(),
@@ -26,7 +28,7 @@ function updateWorkout(workout) {
   })
     .then(function(data) {
       console.log(data);
-      // window.location.href = "/userprofile";
+      window.location.href = "/userprofile";
     });
 }
 
