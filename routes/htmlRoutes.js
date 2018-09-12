@@ -16,4 +16,18 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/sandbox.html"));
   });
+
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/return-user-login.html"));
+  });
+
+
+
+
+  <a href="update-test.html" class="btn btn-outline-success" id="home-take-test-btn" role="button">Sign
+  up!</a>
+
+
+
+
 };
