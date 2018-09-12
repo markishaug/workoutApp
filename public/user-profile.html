@@ -24,7 +24,7 @@
 
         <!-- start nav ---------------------->
         <nav class="sticky-top nav-fill navbar navbar-expand-lg navbar-light bg-warning rounded mb-0">
-            <a class="navbar-brand text-black" href="index.html">The WorkOut App</a>
+            <a class="navbar-brand text-black" >The WorkOut App</a>
 
         </nav><!-- end nav ---------------------->
 
@@ -32,25 +32,38 @@
         <!-- start page content ---------------------->
         <div class="page-content">
             
-          <h2>Accordion Example</h2>
-          <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+          <h2>Welcome back&nbsp;<span id="name">#name </span></h2>
+          <br>
+        
+
+          <form>
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <a href="WOD.html" class="btn btn-outline-success" id="rtn-user-gotoWOD-btn" role="button">Workout Now!</a>
+                </div>
+              </div>
+
+          </form>
+
           <div id="accordion">
-            <div class="card">
+
+            <div class="card"><!-- card 1 -->
               <div class="card-header">
-                <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                  Collapsible Group Item #1
-                </a>
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">Your profile</a>
               </div>
               <div id="collapseOne" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                 <p>Name:<span id="profile-name"></span></p>
+                 <p>Age:<span id="profile-age"></span></p>
+                 <p>Weight:<span id="profile-weight"></span></p>
                 </div>
               </div>
             </div>
-            <div class="card">
+
+            <div class="card"><!-- card 2 --> 
               <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                Collapsible Group Item #2
+                Workout Progress
               </a>
               </div>
               <div id="collapseTwo" class="collapse" data-parent="#accordion">
@@ -59,13 +72,30 @@
                 </div>
               </div>
             </div>
-            <div class="card">
+
+
+            <div class="card"><!-- card 3 -->
               <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                  Collapsible Group Item #3
-                </a>
+                Workout History
+              </a>
               </div>
               <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+                  <canvas id="chart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card"><!-- card 4 -->
+              <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                  Exercise List
+                </a>
+              </div>
+              <div id="collapseFour" class="collapse" data-parent="#accordion">
                 <div class="card-body">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </div>
