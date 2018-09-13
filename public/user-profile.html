@@ -16,7 +16,8 @@
 
     <!-- load fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600" rel="stylesheet">
-</head>
+
+  </head>
 
 <body>
     <!-- start container --------------->
@@ -134,8 +135,12 @@
     <!---end container -------------------------------->
 
 
+    <script>$('.collapse').collapse()</script>
+    <script src="js/index.js" defer></script>
     <script>
-        $('.collapse').collapse()
+      document.getElementById("rtn-user-gotoWOD-btn").addEventListener('click', function() {
+        window.location.href = "/gotoWOD";
+      });
     </script>
 
 

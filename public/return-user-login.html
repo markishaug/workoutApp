@@ -17,6 +17,7 @@
     <!-- load fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -66,7 +67,8 @@
 
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <button type="button" class="btn btn-outline-primary" id="rtn-user-gotoProfile-btn">Sign in and take me to my profile</button>
+                                <button type="button" class="btn btn-outline-primary" id="rtn-user-gotoProfile-btn">Sign
+                                    in and take me to my profile</button>
                             </div>
                         </div>
 
@@ -95,6 +97,21 @@
     </div>
     <!---end container -------------------------------->
 
+    <script src="js/index.js" defer></script>
+    <script>
+        document.getElementById("rtn-user-gotoWOD-btn").addEventListener('click', function () {
+            window.location.href = "/gotoWOD";
+        });
+    </script>
+    <script>
+        document.getElementById("rtn-user-gotoProfile-btn").addEventListener('click', function() {
+            window.location.href = "/gotoProfile";
+        });
+        </script>
+
+
+
+    `
 </body>
 
 </html>
