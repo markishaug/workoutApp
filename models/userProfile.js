@@ -7,20 +7,6 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1, 30]
             }
         },
-        age: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [1, 30]
-            }
-        },
-        weight: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [1, 30]
-            }
-        },
         username: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -36,5 +22,12 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
+    UserProfile.associate = function(models) {
+        // Associating UserProfile with User profiles
+        // When an UserProfile is deleted, also delete any associated User profiles
+        UserProfile.hasMany(models.WorkoutHistory, {
+          onDelete: "cascade"
+        });
+      };
     return UserProfile;
 };
