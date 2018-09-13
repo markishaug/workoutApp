@@ -28,7 +28,7 @@ module.exports = function(app) {
   });
 
   // workout now page
-  app.get("/rtn-user-gotoWOD", function(req, res) {
+  app.get("/gotoWOD", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/workoutnow.html"));
   });
 

@@ -7,7 +7,7 @@ document.getElementById("home-take-test-btn").addEventListener('click', function
 });
 
 document.getElementById("rtn-user-gotoWOD-btn").addEventListener('click', function() {
-    window.location.href = "/rtn-user-gotoWOD";
+    window.location.href = "/gotoWOD";
 });
 
 document.getElementById("rtn-user-gotoProfile-btn").addEventListener('click', function() {
@@ -29,4 +29,3 @@ document.getElementById("gotoProfile").addEventListener('click', function() {
 document.getElementById("launch").addEventListener('click', function() {
     window.location.href = "/launch";
 });
-
