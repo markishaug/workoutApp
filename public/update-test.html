@@ -17,7 +17,6 @@
     <!-- load fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600" rel="stylesheet">
     
-    
 </head>
 
 <body>
@@ -30,7 +29,6 @@
         </nav>
 
         </nav><!-- end nav ---------------------->
-
 
         <!-- start page content ---------------------->
         <div class="page-content">
@@ -48,15 +46,15 @@
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="pushups">Pushups</label>
-                                <input type="text" class="form-control" id="pushups" placeholder="pushups">
+                                <input type="text" class="form-control" id="novice-pushups" placeholder="pushups">
                             </div>
                             <div class="form-group col-4">
                                 <label for="pullups">Pullups</label>
-                                <input type="pullups" class="form-control" id="pullups" placeholder="pullups">
+                                <input type="pullups" class="form-control" id="novice-pullups" placeholder="pullups">
                             </div>
                             <div class="form-group col-4">
                                 <label for="body-weight-squats">Squats</label>
-                                <input type="body-weight-squats" class="form-control" id="body-weight-squats" placeholder="squats">
+                                <input type="body-weight-squats" class="form-control" id="novice-body-weight-squats" placeholder="squats">
                             </div>
                             <div class="form-group col-4">
                                 <label for="age">Age</label>
@@ -81,15 +79,15 @@
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="bench">Bench Press</label>
-                                <input type="text" class="form-control" id="bench" placeholder="bench">
+                                <input type="text" class="form-control" id="adv-bench" placeholder="bench">
                             </div>
                             <div class="form-group col-4">
                                 <label for="pullups">Pullups</label>
-                                <input type="pullups" class="form-control" id="pullups" placeholder="pullups">
+                                <input type="pullups" class="form-control" id="adv-pullups" placeholder="pullups">
                             </div>
                             <div class="form-group col-4">
                                 <label for="squats">Squats</label>
-                                <input type="squats" class="form-control" id="squats" placeholder="squats">
+                                <input type="squats" class="form-control" id="adv-squats" placeholder="squats">
                             </div>
                             <div class="form-group col-4">
                                 <label for="age">Age</label>
@@ -133,7 +131,22 @@
     </div>
     <!---end container -------------------------------->
 <!-- Custom script -->
+<script src="js/index.js" defer></script>
 <script src="js/assess.js" type="text/javascript"></script>
+
+<script>
+    document.getElementById("update-novice-btn").addEventListener('click', function() {
+        window.location.href = "/gotoProfile";
+    });
+</script>
+
+<script>
+    document.getElementById("update-advanced-btn").addEventListener('click', function() {
+        window.location.href = "/gotoProfile";
+    });
+</script>
+
+
 </body>
 
 </html>
