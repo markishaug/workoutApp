@@ -465,10 +465,17 @@ module.exports = function(app) {
             res.json(err);
         });
     });
+    //Get route for getting all of user profiles
+    app.get("/api/userProfile", function(req, res) {
+        db.UserProfile.findAll({}).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    });
     //Post route for adding a new user
     app.post("/api/userProfile", function(req, res) {
         db.UserProfile.create(req.body).then(function(dblifting) {
-            res.json(dblifting)
+            console.log(dblifting.id);
+            res.json(dblifting.id)
         }).catch(function(err) {
             console.log(err);
             res.json(err);
@@ -480,9 +487,19 @@ module.exports = function(app) {
             res.json(dblifting);
         });
     });
+    //Get route for getting one workout history
+    app.get("/api/workoutHistory/:id", function(req, res) {
+        db.WorkoutHistory.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    });
     // POST route for adding workout history
     app.post("/api/workoutHistory", function(req, res) {
-        db.WorkoutHistory.create({exercise: req.body}).then(function(dblifting) {
+        db.WorkoutHistory.create(req.body).then(function(dblifting) {
         res.json(dblifting);
         });
     });
@@ -544,7 +561,7 @@ module.exports = function(app) {
                     (maxReps.squats === 0) {
                     multiplier = 0.75;
                 } else {
-                    multiplier = ((maxReps.squats - 1) * 0.02) + 1
+                    multiplier = ((maxReps.squats - 1) * 0.03) + 1
                 };
                 squatMax = bodyweight * multiplier;
             };
