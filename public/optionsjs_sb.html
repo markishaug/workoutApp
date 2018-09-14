@@ -17,8 +17,6 @@
     <!-- load fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600" rel="stylesheet">
     
-    <script src="js/index.js" defer></script>
-
 </head>
 
 <body>
@@ -110,6 +108,57 @@
 
         </div>
         <!---end container -------------------------------->
+
+<script>
+
+
+$(".submit").click(function() {
+           
+        var timeArr = [];
+        var purposeArr = [];
+        var mgArr = [];
+        var equipArr = [];
+    
+        var timeInput = $("input[type='radio'][name='time']:checked");
+        var purposeInput = $("input[type='radio'][name='purpose']:checked");
+        var mgInput = $("input[type='checkbox'][name='mg']:checked");
+        var equipInput = $("input[type='checkbox'][name='equipment']:checked");
+    
+    
+        timeInput.each(function() {
+            timeArr.push($(this).val());
+        });
+
+        purposeInput.each(function() {
+            purposeArr.push($(this).val());
+        });
+
+
+        mgInput.each(function() {
+            mgArr.push($(this).val());
+        });
+
+        equipInput.each(function() {
+            equipArr.push($(this).val());
+        });
+
+        console.log("this is the time array");
+        console.log(timeArr);
+        console.log("------------------------------");
+        console.log("this is the purpose array");
+        console.log(purposeArr);
+        console.log("------------------------------");
+        console.log("this is the muscle group array");
+        console.log(mgArr);
+        console.log("------------------------------");
+        console.log("this is the equipment group array");
+        console.log(equipArr);
+    
+})
+
+</script>
+
+
 
 </body>
 
