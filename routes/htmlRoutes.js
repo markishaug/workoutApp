@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/sandbox.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   // returning user login
@@ -44,6 +44,9 @@ module.exports = function(app) {
 
   app.get("/wod", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/wodsandbox.html"));
+  });
+  app.get("/options/sandbox", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/sandbox.html"));
   });
 
 };

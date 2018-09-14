@@ -467,7 +467,20 @@ module.exports = function(app) {
     });
     //Get route for getting all of user profiles
     app.get("/api/userProfile", function(req, res) {
-        db.UserProfile.findAll({}).then(function(dblifting) {
+        db.UserProfile.findAll({
+            include: [db.WorkoutHistory]
+        }).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    });
+    //Get route for getting one user profile
+    app.get("/api/userProfile/:id", function(req, res) {
+        db.UserProfile.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [db.WorkoutHistory]
+        }).then(function(dblifting) {
             res.json(dblifting);
         });
     });
@@ -483,7 +496,15 @@ module.exports = function(app) {
     });
     //Get route for getting workout history
     app.get("/api/workoutHistory", function(req, res) {
-        db.WorkoutHistory.findAll({}).then(function(dblifting) {
+        console.log("user profile id =====", query);
+        var query = {};
+    if (req.query.userId) {
+      query.UserProfileId = req.query.userId;
+    }
+    db.WorkoutHistory.findAll({
+      where: query,
+      include: [db.UserProfile]
+    }).then(function(dblifting) {
             res.json(dblifting);
         });
     });
@@ -492,7 +513,8 @@ module.exports = function(app) {
         db.WorkoutHistory.findOne({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [db.UserProfile]
         }).then(function(dblifting) {
             res.json(dblifting);
         });

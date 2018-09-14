@@ -1,6 +1,6 @@
 $(document).ready(function() {
 var options = ("#options");
-$(options).on("submit", handleFormSubmit);
+$("#go").on("click", handleFormSubmit);
 
 function handleFormSubmit(event) {
     event.preventDefault();
