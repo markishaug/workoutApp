@@ -600,5 +600,11 @@ module.exports = function(app) {
 
         res.json(oneRepObj);
         });
+        //Get route for getting one rep max
+    app.get("/api/estimateOneRep", function(req, res) {
+        db.SelfAssess.findAll({}).then(function(dblifting) {
+            res.json(dblifting);
+        });
+    });
     });
 };
