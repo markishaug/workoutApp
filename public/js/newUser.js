@@ -32,14 +32,14 @@ var workouts;
         });
     }
 
-  function getHistory() {
-    authorId = "/?author_id=" + authorId;
-    userId = sessionStorage.getItem("id")
-    // console.log("user id ====== ", userId);
-    $.get("/api/workoutHistory" + userId, function(data) {
-      // console.log("History==========", data);
-      Chart(data);
-    });
-    }
+  // function getHistory() {
+  //   authorId = "/?author_id=" + authorId;
+  //   userId = sessionStorage.getItem("id")
+  //   // console.log("user id ====== ", userId);
+  //   $.get("/api/workoutHistory/" + userId, function(data) {
+  //     // console.log("History==========", data);
+  //     Chart(data);
+  //   });
+  //   }
 }
 });
