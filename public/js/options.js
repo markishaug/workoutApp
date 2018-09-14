@@ -1,53 +1,71 @@
 $(document).ready(function() {
-var options = ("#options");
-$("#go").on("click", handleFormSubmit);
+    $(".submit").click(function() {
+           
+        var timeArr = [];
+        var purposeArr = [];
+        var mgArr = [];
+        var equipArr = [];
+    
+        var timeInput = $("input[type='radio'][name='time']:checked");
+        var purposeInput = $("input[type='radio'][name='purpose']:checked");
+        var mgInput = $("input[type='checkbox'][name='mg']:checked");
+        var equipInput = $("input[type='checkbox'][name='equipment']:checked");
+    
+        timeInput.each(function() {
+            timeArr.push($(this).val());
+        });
 
-function handleFormSubmit(event) {
-    event.preventDefault();
+        purposeInput.each(function() {
+            purposeArr.push($(this).val());
+        });
 
-var values = [];
-var values2 = [];
-var timeInput = $("input[type=checkbox][name=time]:checked").val();
-var purposeInput = $("input[type=checkbox][name=purpose]:checked").val();
-var mgInput = $("input[type=checkbox][name=mg]:checked").val();
-var equipment = $("input[type=checkbox][name=equipment]:checked").val();
+        mgInput.each(function() {
+            mgArr.push($(this).val());
+        });
 
-// console.log("------", values);
-// console.log("========", values2);
+        equipInput.each(function() {
+            equipArr.push($(this).val());
+        });
 
-// Wont submit the post if we are missing time, purpose, mg, or equipment. Will set a none option for equipment
-if (!timeInput || !purposeInput || !mgInput || !equipment) {
-    return;
-  }
+        // KEEP FOR TESTING *************************************************************
+        // console.log("this is the time array");
+        // console.log(timeArr);
+        // console.log("------------------------------");
+        // console.log("this is the purpose array");
+        // console.log(purposeArr);
+        // console.log("------------------------------");
+        // console.log("this is the muscle group array");
+        // console.log(mgArr);
+        // console.log("------------------------------");
+        // console.log("this is the equipment group array");
+        // console.log(equipArr);
+        // *******************************************************************************
+    
+    }) // end of click
 
-// Create constructor for options table in database
-var workoutOptions = {
-    time: timeInput,
-    purpose: purposeInput,
-    muscleGroup: mgInput,
-    equipment: equipment
-};
-console.log(workoutOptions);
-console.log(workoutOptions.muscleGroup);
-console.log(workoutOptions.equipment);
+    // Wont submit the post if we are missing time, purpose, mg, or equipment. Will set a none option for equipment
+    if (!timeInput || !purposeInput || !mgInput || !equipment) {
+        return;
+    };
 
+    // Create constructor for options table in database
+    var workoutOptions = {
+        time: timeArr,
+        purpose: purposeArr,
+        muscleGroup: mgArr,
+        equipment: equipArr
+    };
 
-//   $.post("/api/exercises", workoutOptions, function(data) {
-//     console.log(data);
-//   });
+    console.log(workoutOptions);
+    console.log(workoutOptions.muscleGroup);
+    console.log(workoutOptions.equipment);
 
+    //   $.post("/api/exercises", workoutOptions, function(data) {
+    //     console.log(data);
+    //   });
 
-};
+    // Function that gets the entire workout and renders it to workout page
+    // function wod() {
+    // };
 
-
-// Function that gets the entire workout and renders it to workout page
-function wod() {
-
-
-
-
-
-
-
-};
-});
+}); // end whole thing
