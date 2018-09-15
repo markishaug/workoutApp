@@ -233,15 +233,14 @@ module.exports = function(app) {
         var muscleGroup;
         console.log("body ========= ", req.body)
         var cleanBody = {
-                time: req.body["time[]"],
-                purpose: req.body["purpose[]"],
-                muscleGroup: req.body["muscleGroup[]"],
-                equipment: req.body["equipment[]"]
+                time: req.body["time"],
+                purpose: req.body["purpose"],
+                muscleGroup: req.body["muscleGroup"].split(','),
+                equipment: req.body["equipment"].split(',')
             }
             //assigning muscleGroup values to variable for easy access
-        var muscleGroupRequest = cleanBody.muscleGroup
-        console.log("request ========= ", muscleGroupRequest)
-            //checks to see if the property of muscleGroupRequest is an array
+        var muscleGroupRequest = cleanBody["muscleGroup"];
+        //checks to see if the property of muscleGroupRequest is an array
         if (Array.isArray(muscleGroupRequest)) {
             muscleGroup = [];
             //parseses out each muscle group from the request and assigns it to the obj Object as a property with the value of true. Then pushes obj into muscleGroup
