@@ -14,8 +14,16 @@ module.exports = function(app) {
     app.post("/api/process/bestexercise", function(req, res) {
             //An empty var for assigning an array to later    
             var muscleGroup;
+            console.log("body ========= ", req.body)
+            var cleanBody = {
+                time: req.body["time[]"],
+                purpose: req.body["purpose[]"],
+                muscleGroup: req.body["muscleGroup[]"],
+                equipment: req.body["equipment[]"]
+            }
             //assigning muscleGroup values to variable for easy access
-            var muscleGroupRequest = req.body.muscleGroup
+            var muscleGroupRequest = cleanBody.muscleGroup
+            console.log("request ========= ", muscleGroupRequest)
                 //checks to see if the property of muscleGroupRequest is an array
             if (Array.isArray(muscleGroupRequest)) {
                 muscleGroup = [];
@@ -30,14 +38,16 @@ module.exports = function(app) {
                 muscleGroup = {};
                 muscleGroup[muscleGroupRequest] = true;
             }
+            console.log("muscle group ==============", muscleGroup)
             //Sequalize for exercises where selected muscleGroup have the property values of true
             db.ExerciseList.findAll({
                 where: {
                     $or: muscleGroup
                 }
             }).then(function(dblifting) {
+                console.log("dblifting ========== ", dblifting)
                 //var for time in the request
-                time = req.body.time;
+                time = cleanBody.time;
                 //blank array variable that will be returend to user once array is populated
                 workoutArray = [];
                 //else if statements to decided how many exercises to return to user

@@ -58,6 +58,7 @@ $(document).ready(function() {
       }
       console.log(exercise1);
       // updateWorkout(exercise1);
+      
       var exerciseArr = [];
       exerciseArr.push(exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8);
       var postPackage = {
