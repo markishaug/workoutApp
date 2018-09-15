@@ -4,10 +4,11 @@ $("#update-novice-btn").on("click", handleTestSubmit);
 function handleTestSubmit(event) {
     event.preventDefault();
 
-var weightInput = $("#weight").val().trim();
-var pushupsInput = $("#pushups").val().trim();
-var pullupsInput = $("#pullups").val().trim();
-var squatInput = $("#body-weight-squats").val().trim();
+var weightInput = $("#novice-weight").val().trim();
+var pushupsInput = $("#novice-pushups").val().trim();
+var pullupsInput = $("#novice-pullups").val().trim();
+var squatInput = $("#novice-body-weight-squats").val().trim();
+
 
 if (!weightInput || !pushupsInput || !pullupsInput || !squatInput) {
     return;
@@ -24,6 +25,7 @@ submitInfo(SelfAssess);
 
 function submitInfo(info) {
     $.post("/api/estimateOneRep", info);
+    localStorage.setItem("oneRepObj", res);
     }
 
 }

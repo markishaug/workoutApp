@@ -607,7 +607,7 @@ module.exports = function(app) {
                 Squat: squatMax
             };
             console.log("------------", oneRepObj);
-
+            
         res.json(oneRepObj);
         });
         //Get route for getting one rep max
