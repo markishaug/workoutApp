@@ -251,7 +251,7 @@ module.exports = function(app) {
             //blank array variable that will be returend to user once array is populated
             workoutArray = [];
             //else if statements to decided how many exercises to return to user
-            if (time === 2) {
+            if (time === "2") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
                 for (i = 1; i <= 1; i++) {
                     var compound;
@@ -293,7 +293,7 @@ module.exports = function(app) {
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
 
-            } else if (time === 4) {
+            } else if (time === "4") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                 for (i = 1; i <= 2; i++) {
@@ -335,7 +335,7 @@ module.exports = function(app) {
 
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
-            } else if (time === 6) {
+            } else if (time === "6") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                 for (i = 1; i <= 3; i++) {
@@ -377,7 +377,7 @@ module.exports = function(app) {
 
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
-            } else if (time === 8) {
+            } else if (time === "8") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                 for (i = 1; i <= 4; i++) {
