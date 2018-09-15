@@ -16,13 +16,13 @@ module.exports = function(app) {
             var muscleGroup;
             console.log("body ========= ", req.body)
             var cleanBody = {
-                    time: req.body["time[]"],
-                    purpose: req.body["purpose[]"],
-                    muscleGroup: req.body["muscleGroup[]"],
-                    equipment: req.body["equipment[]"]
+                    time: req.body["time"],
+                    purpose: req.body["purpose"],
+                    muscleGroup: req.body["muscleGroup"].split(','),
+                    equipment: req.body["equipment"].split(',')
                 }
                 //assigning muscleGroup values to variable for easy access
-            var muscleGroupRequest = cleanBody.muscleGroup
+            var muscleGroupRequest = cleanBody["muscleGroup"];
             console.log("request ========= ", muscleGroupRequest)
                 //checks to see if the property of muscleGroupRequest is an array
             if (Array.isArray(muscleGroupRequest)) {
@@ -47,7 +47,8 @@ module.exports = function(app) {
             }).then(function(dblifting) {
                 // console.log("dblifting ========== ", dblifting)
                 //var for time in the request
-                time = cleanBody.time;
+                time = cleanBody["time"];
+                console.log(time);
                 //blank array variable that will be returend to user once array is populated
                 workoutArray = [];
                 //else if statements to decided how many exercises to return to user
