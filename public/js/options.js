@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".submit").click(function() {
+    $("#options-submit-btn").click(function() {
 
             var timeArr = [];
             var purposeArr = [];
@@ -77,5 +77,4 @@ $(document).ready(function() {
             // };
         }) // end of click
 
-}); // end whole thingff
-
+}); // end whole thing
