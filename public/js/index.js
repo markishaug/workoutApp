@@ -29,3 +29,11 @@ document.getElementById("gotoProfile").addEventListener('click', function() {
 document.getElementById("launch").addEventListener('click', function() {
     window.location.href = "/launch";
 });
+
+document.getElementById("gotoOptions-btn").addEventListener('click', function() {
+    window.location.href = "/options";
+});
+
+document.getElementById("gotoWOD-btn").addEventListener('click', function() {
+    window.location.href = "/gotoWOD";
+});
