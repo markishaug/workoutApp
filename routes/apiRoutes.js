@@ -16,13 +16,13 @@ module.exports = function(app) {
             var muscleGroup;
             console.log("body ========= ", req.body)
             var cleanBody = {
-                time: req.body["time[]"],
-                purpose: req.body["purpose[]"],
-                muscleGroup: req.body["muscleGroup[]"],
-                equipment: req.body["equipment[]"]
-            }
-            //assigning muscleGroup values to variable for easy access
-            var muscleGroupRequest = cleanBody.muscleGroup
+                    time: req.body["time"],
+                    purpose: req.body["purpose"],
+                    muscleGroup: req.body["muscleGroup"].split(','),
+                    equipment: req.body["equipment"].split(',')
+                }
+                //assigning muscleGroup values to variable for easy access
+            var muscleGroupRequest = cleanBody["muscleGroup"];
             console.log("request ========= ", muscleGroupRequest)
                 //checks to see if the property of muscleGroupRequest is an array
             if (Array.isArray(muscleGroupRequest)) {
@@ -39,19 +39,20 @@ module.exports = function(app) {
                 muscleGroup[muscleGroupRequest] = true;
             }
             console.log("muscle group ==============", muscleGroup)
-            //Sequalize for exercises where selected muscleGroup have the property values of true
+                //Sequalize for exercises where selected muscleGroup have the property values of true
             db.ExerciseList.findAll({
                 where: {
                     $or: muscleGroup
                 }
             }).then(function(dblifting) {
-                console.log("dblifting ========== ", dblifting)
+                // console.log("dblifting ========== ", dblifting)
                 //var for time in the request
-                time = cleanBody.time;
+                time = cleanBody["time"];
+                console.log(time);
                 //blank array variable that will be returend to user once array is populated
                 workoutArray = [];
                 //else if statements to decided how many exercises to return to user
-                if (time === 2) {
+                if (time === "2") {
                     //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
                     for (i = 1; i <= 1; i++) {
                         var compound;
@@ -71,7 +72,7 @@ module.exports = function(app) {
 
                         workoutArray.push(compound[getRandomCompoundIndex()]);
 
-                    }
+                    };
                     //the rest of the workoutArray is filled with accessory exercises based off of the total amount of exercises the user is requesting
                     for (i = 1; i <= 1; i++) {
                         var accessory;
@@ -91,9 +92,9 @@ module.exports = function(app) {
                         };
 
                         workoutArray.push(accessory[getRandomAccessoryIndex()]);
-                    }
+                    };
 
-                } else if (time === 4) {
+                } else if (time === "4") {
                     //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                     for (i = 1; i <= 2; i++) {
@@ -135,7 +136,7 @@ module.exports = function(app) {
 
                         workoutArray.push(accessory[getRandomAccessoryIndex()]);
                     }
-                } else if (time === 6) {
+                } else if (time === "6") {
                     //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                     for (i = 1; i <= 3; i++) {
@@ -177,7 +178,7 @@ module.exports = function(app) {
 
                         workoutArray.push(accessory[getRandomAccessoryIndex()]);
                     }
-                } else if (time === 8) {
+                } else if (time === "8") {
                     //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                     for (i = 1; i <= 4; i++) {
@@ -219,37 +220,53 @@ module.exports = function(app) {
 
                         workoutArray.push(accessory[getRandomAccessoryIndex()]);
                     }
+
                 }
                 //returns to user the requested workouts
                 res.json(workoutArray);
             });
+
         })
         // POST route to run through the exercises and pick through based on user choices
     app.post("/api/process/bestbodyweightexercise", function(req, res) {
+        //An empty var for assigning an array to later    
         var muscleGroup;
-        var muscleGroupRequest = req.body.muscleGroup
+        console.log("body ========= ", req.body)
+        var cleanBody = {
+                time: req.body["time"],
+                purpose: req.body["purpose"],
+                muscleGroup: req.body["muscleGroup"].split(','),
+                equipment: req.body["equipment"].split(',')
+            }
+            //assigning muscleGroup values to variable for easy access
+        var muscleGroupRequest = cleanBody["muscleGroup"];
+        //checks to see if the property of muscleGroupRequest is an array
         if (Array.isArray(muscleGroupRequest)) {
             muscleGroup = [];
+            //parseses out each muscle group from the request and assigns it to the obj Object as a property with the value of true. Then pushes obj into muscleGroup
             for (i = 0; i < muscleGroupRequest.length; i++) {
                 obj = {};
                 obj[muscleGroupRequest[i]] = true;
                 muscleGroup.push(obj);
             }
+            //if the property of muscleGroupRequest is not an array then it creates an Object and asseigns the muscleGroup as a property with a value of true.
         } else {
             muscleGroup = {};
             muscleGroup[muscleGroupRequest] = true;
         }
+        console.log("muscle group ==============", muscleGroup)
+            //Sequalize for exercises where selected muscleGroup have the property values of true
         db.BodyWeight.findAll({
             where: {
                 $or: muscleGroup
             }
         }).then(function(dblifting) {
             //var for time in the request
-            time = req.body.time;
+            time = cleanBody.time;
             //blank array variable that will be returend to user once array is populated
             workoutArray = [];
             //else if statements to decided how many exercises to return to user
-            if (time === 2) {
+            if (time === "2") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
                 for (i = 1; i <= 1; i++) {
                     var compound;
@@ -291,7 +308,7 @@ module.exports = function(app) {
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
 
-            } else if (time === 4) {
+            } else if (time === "4") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                 for (i = 1; i <= 2; i++) {
@@ -333,7 +350,7 @@ module.exports = function(app) {
 
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
-            } else if (time === 6) {
+            } else if (time === "6") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                 for (i = 1; i <= 3; i++) {
@@ -375,7 +392,7 @@ module.exports = function(app) {
 
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
-            } else if (time === 8) {
+            } else if (time === "8") {
                 //of the availbe exercises one compound exercise is selected at random and pushed into workoutArray
 
                 for (i = 1; i <= 4; i++) {
@@ -418,8 +435,6 @@ module.exports = function(app) {
                     workoutArray.push(accessory[getRandomAccessoryIndex()]);
                 }
             }
-
-
             //returns to user the requested workouts
             res.json(workoutArray);
         });
@@ -508,13 +523,13 @@ module.exports = function(app) {
     app.get("/api/workoutHistory", function(req, res) {
         console.log("user profile id =====", query);
         var query = {};
-    if (req.query.userId) {
-      query.UserProfileId = req.query.userId;
-    }
-    db.WorkoutHistory.findAll({
-      where: query,
-      include: [db.UserProfile]
-    }).then(function(dblifting) {
+        if (req.query.userId) {
+            query.UserProfileId = req.query.userId;
+        }
+        db.WorkoutHistory.findAll({
+            where: query,
+            include: [db.UserProfile]
+        }).then(function(dblifting) {
             res.json(dblifting);
         });
     });
@@ -532,7 +547,7 @@ module.exports = function(app) {
     // POST route for adding workout history
     app.post("/api/workoutHistory", function(req, res) {
         db.WorkoutHistory.create(req.body).then(function(dblifting) {
-        res.json(dblifting);
+            res.json(dblifting);
         });
     });
     //Get route for getting self assessment
@@ -544,12 +559,12 @@ module.exports = function(app) {
     // POST route for adding self assesment
     app.post("/api/selfassess", function(req, res) {
         db.SelfAssess.create(req.body).then(function(dblifting) {
-        res.json(dblifting);
+            res.json(dblifting);
         });
     });
     // POST route for estimating one rep max
     app.post("/api/estimateOneRep", function(req, res) {
-        
+
         db.SelfAssess.create(req.body).then(function(dblifting) {
             // Multiply body weight by incremental number depending on the number of repetions
             console.log("===========", req.body)
@@ -564,33 +579,33 @@ module.exports = function(app) {
             var pushupMax;
             var pullupMax;
             var squatMax;
+
             function pushupMultiplier() {
                 if (maxReps.pushups === 1) {
                     multiplier = 1;
-                } else if 
-                    (maxReps.pushups === 0) {
+                } else if (maxReps.pushups === 0) {
                     multiplier = 0.75;
                 } else {
                     multiplier = ((maxReps.pushups - 1) * 0.04) + 1
                 };
                 pushupMax = pushupBodyweight * multiplier;
             };
+
             function pullupMultiplier() {
                 if (maxReps.pullups === 1) {
                     multiplier = 1;
-                } else if 
-                    (maxReps.pullups === 0) {
+                } else if (maxReps.pullups === 0) {
                     multiplier = 0.75;
                 } else {
                     multiplier = ((maxReps.pullups - 1) * 0.04) + 1
                 };
                 pullupMax = bodyweight * multiplier;
             };
+
             function squatMultiplier() {
                 if (maxReps.squats === 1) {
                     multiplier = 1;
-                } else if 
-                    (maxReps.squats === 0) {
+                } else if (maxReps.squats === 0) {
                     multiplier = 0.75;
                 } else {
                     multiplier = ((maxReps.squats - 1) * 0.03) + 1
@@ -611,10 +626,10 @@ module.exports = function(app) {
         res.json(oneRepObj);
         });
         //Get route for getting one rep max
-    app.get("/api/estimateOneRep", function(req, res) {
-        db.SelfAssess.findAll({}).then(function(dblifting) {
-            res.json(dblifting);
+        app.get("/api/estimateOneRep", function(req, res) {
+            db.SelfAssess.findAll({}).then(function(dblifting) {
+                res.json(dblifting);
+            });
         });
-    });
     });
 };
