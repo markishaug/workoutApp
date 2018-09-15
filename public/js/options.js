@@ -41,12 +41,12 @@ $(document).ready(function() {
         // console.log(equipArr);
         // *******************************************************************************
     
-    }) // end of click
+    
 
     // Wont submit the post if we are missing time, purpose, mg, or equipment. Will set a none option for equipment
-    if (!timeInput || !purposeInput || !mgInput || !equipment) {
-        return;
-    };
+    // if (!timeInput || !purposeInput || !mgInput || !equipment) {
+    //     return;
+    // };
 
     // Create constructor for options table in database
     var workoutOptions = {
@@ -60,12 +60,13 @@ $(document).ready(function() {
     console.log(workoutOptions.muscleGroup);
     console.log(workoutOptions.equipment);
 
-    //   $.post("/api/exercises", workoutOptions, function(data) {
-    //     console.log(data);
-    //   });
+      $.post("/api/process/bestexercise", workoutOptions, function(data) {
+        console.log(data);
+      });
 
     // Function that gets the entire workout and renders it to workout page
     // function wod() {
     // };
+}) // end of click
 
 }); // end whole thing
