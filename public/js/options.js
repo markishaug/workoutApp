@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".submit").click(function() {
+    $(".options-submit-btn").click(function() {
            
         var timeArr = [];
         var purposeArr = [];
