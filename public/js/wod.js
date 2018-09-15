@@ -7,18 +7,79 @@ $(document).ready(function() {
         muscleGroup: sessionStorage.getItem("muscleGroup"),
         equipment: sessionStorage.getItem("equipment")
     };
+    if (workoutOptions.purpose === "strength") {
+        $(".reps").append("Reps: 8-10");
+    } else if (workoutOptions.purpose === "speed") {
+        $(".reps").append("Reps: 3-5");
+    } else if (workoutOptions.purpose === "sculpt") {
+        $(".reps").append("Reps: 10-15");
+    };
     console.log(workoutOptions);
     if (workoutOptions.equipment.includes("none")) {
 
         $.post("/api/process/bestbodyweightexercise", workoutOptions, function(data) {
 
             console.log(data);
+            if (data.length === 2) {
+            $("#ex1").append("Name: ", data[0].name);
+            $("#ex2").append("Name: ", data[1].name);
+        } else if (data.length === 4) {
+            $("#ex1").append("Name: ", data[0].name);
+            $("#ex2").append("Name: ", data[1].name);
+            $("#ex3").append("Name: ", data[2].name);
+            $("#ex4").append("Name: ", data[3].name);
+        } else if (data.length === 6) {
+            $("#ex1").append("Name: ", data[0].name);
+            $("#ex2").append("Name: ", data[1].name);
+            $("#ex3").append("Name: ", data[2].name);
+            $("#ex4").append("Name: ", data[3].name);
+            $("#ex5").append("Name: ", data[4].name);
+            $("#ex6").append("Name: ", data[5].name);
+        } else if (data.length === 8) {
+            $("#ex1").append("Name: ", data[0].name);
+            $("#ex2").append("Name: ", data[1].name);
+            $("#ex3").append("Name: ", data[2].name);
+            $("#ex4").append("Name: ", data[3].name);
+            $("#ex5").append("Name: ", data[4].name);
+            $("#ex6").append("Name: ", data[5].name);
+            $("#ex7").append("Name: ", data[6].name);
+            $("#ex8").append("Name: ", data[7].name);
+        };
+            
+            
 
         });
     } else {
 
         $.post("/api/process/bestexercise", workoutOptions, function(data) {
-            console.log(data);
+            console.log("data  ====== ", data);
+            console.log("data 0 ====== ", data[0].name);
+            if (data.length === 2) {
+                $("#ex1").append("Name: ", data[0].name);
+                $("#ex2").append("Name: ", data[1].name);
+            } else if (data.length === 4) {
+                $("#ex1").append("Name: ", data[0].name);
+                $("#ex2").append("Name: ", data[1].name);
+                $("#ex3").append("Name: ", data[2].name);
+                $("#ex4").append("Name: ", data[3].name);
+            } else if (data.length === 6) {
+                $("#ex1").append("Name: ", data[0].name);
+                $("#ex2").append("Name: ", data[1].name);
+                $("#ex3").append("Name: ", data[2].name);
+                $("#ex4").append("Name: ", data[3].name);
+                $("#ex5").append("Name: ", data[4].name);
+                $("#ex6").append("Name: ", data[5].name);
+            } else if (data.length === 8) {
+                $("#ex1").append("Name: ", data[0].name);
+                $("#ex2").append("Name: ", data[1].name);
+                $("#ex3").append("Name: ", data[2].name);
+                $("#ex4").append("Name: ", data[3].name);
+                $("#ex5").append("Name: ", data[4].name);
+                $("#ex6").append("Name: ", data[5].name);
+                $("#ex7").append("Name: ", data[6].name);
+                $("#ex8").append("Name: ", data[7].name);
+            };
+
         });
     }
 
